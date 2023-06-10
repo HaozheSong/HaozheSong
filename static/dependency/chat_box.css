@@ -1,0 +1,26 @@
+#chat_box {
+    padding: 2rem;
+    margin-bottom: 1rem;
+    border: solid rgba(108, 117, 125, 0.05) 1px;
+    border-radius: 0.25rem;
+    background-color: rgba(108, 117, 125, 0.03);
+}
+
+.answer {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.question {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.question_btn {
+    margin-left: -15px;
+}
+
+#replay_btn {
+    display: flex;
+    justify-content: flex-end;
+}

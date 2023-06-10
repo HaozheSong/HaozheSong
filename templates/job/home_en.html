@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application</title>
+    {% include 'dependency.html' %}
+    <style>
+        #personal_info {
+            padding: 1rem;
+        }
+
+        #portrait {
+            max-height: 325px;
+        }
+    </style>
+</head>
+<body>
+{% include 'share/header.html' %}
+<div class="container" id="container">
+    <h1 class="text-center">Home</h1>
+    <!--chat box-->
+    <div id="chat_box_container" class="shadow">
+        <link rel="stylesheet" href="{{ url_for('static',filename='dependency/chat_box.css') }}">
+        <script src="{{ url_for('static',filename='dependency/chat_box.js') }}"></script>
+        <div id="chat_box">
+            <div class="answer">Hello/ 你好/ こんにちは~</div>
+            <div class="answer">I am Haozhe Song, a first-year Master's student majoring in Electrical and Computer
+                Engineering in Carnegie Mellon University.
+            </div>
+            <div class="answer">I am seeking a summer internship or a research project preferably on software
+                engineering, but I can also work on hardware design and machine learning.
+            </div>
+            <div class="question">What is your strength?</div>
+            <div class="answer">From my undergraduate study in circuits and computer hardware, I have a comprehensive
+                understanding of the mechanism and architecture of computers.
+            </div>
+            <div class="answer">Besides, through working on web development projects as a full-stack developer, I have
+                got familiar with both frontend and backend, as well as databases and Linux.
+            </div>
+            <div class="answer">Also, I am developing my skills in machine learning by deriving extensive knowledge from
+                online courses, books, papers and research.
+            </div>
+            <div class="answer">And my language abilities in English and Japanese, especially English, enable me to
+                communicate with foreigners confidently and fluently.
+            </div>
+            <div class="question">Why do you regard yourself as a promising candidate?</div>
+            <div class="answer">Armed with background in both hardware and software as well as proficient language
+                skills, I believe my wide range of interests and capabilities will distinguish myself as a strong
+                candidate and a reliable team member.
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+    {% include 'dependency.html' %}
+    <style>
+        ul {
+            padding-inline-start: 24px;
+        }
+
+        .container {
+            max-width: 960px;
+        }
+
+        .bi {
+            vertical-align: -0.125em;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('h2').each(function () {
+                $(this).addClass('mt-4');
+                $(this).after('<hr class="my-1">')
+            });
+
+            $('.row').each(function () {
+                $($(this).children()[0]).addClass('col-4 col-lg-3');
+                $($(this).children()[1]).addClass('col-8 col-lg-9');
+            });
+
+            $('.a_blank').each(function () {
+                $(this).attr('target', '_blank');
+            });
+
+            $('#skills').children('div').each(function () {
+                $(this).addClass('mt-2');
+                $(this).children().first().addClass('font-weight-bold');
+            });
+        })
+    </script>
+</head>
+
+<body>
+    {% include 'share/header.html' %}
+    <div class="container mb-5">
+        <h1>Haozhe Song</h1>
+        <section id="contact_info">
+            <div class="row">
+                <div>Email</div>
+                <div>song_haozhe@sina.com</div>
+            </div>
+            <div class="row">
+                <div>Personal Webpage</div>
+                <div><a href="https://sorapage.com/graduate/" class="a_blank">https://sorapage.com/graduate/</a>
+                </div>
+            </div>
+        </section>
+        <section id="education">
+            <h2>EDUCATION</h2>
+            <div class="row">
+                <time>09/2018 - 06/2022</time>
+                <div>
+                    <b>Huazhong University of Science and Technology (HUST), China</b><br>
+                    BEng in Integrated Circuits and Systems,
+                    <a href="{{ url_for('static',filename='transcript/HUST_transcript.pdf') }}" class="a_blank">Interim GPA: 3.86/4.00</a>
+                </div>
+            </div>
+            <div class="row">
+                <time>07/2021 - 09/2021</time>
+                <div>
+                    <b>The University of California, Irvine, the US</b><br>
+                    The UCInspire Summer Research Program in Engineering,
+                    <a href="{{ url_for('static',filename='transcript/UCInspire_transcript.pdf') }}" class="a_blank">GPA: 4.00/4.00</a>
+                </div>
+            </div>
+        </section>
+        <section id="research_experience">
+            <h2>RESEARCH EXPERIENCE</h2>
+            <div id="NEEDS">
+                <div class="row" id="NEEDS_title">
+                    <time>07/2020 - present</time>
+                    <div>
+                        <b>Circuit Design based on a Spin–orbit Torque Device for Sensing 3D Magnetic Fields</b>
+                        <a href="/graduate/research/NEEDS" class="a_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                      d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                <path fill-rule="evenodd"
+                                      d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                            </svg>
+                        </a><br>
+                        <a href="http://needs.oei.hust.edu.cn/" class="a_blank">Nanoscale Energy-Efficient Devices and
+                            Systems (NEEDS) Lab</a>, led by Prof. Long You<br>
+                        <b>Research Member │Huazhong Univ. of Science and Technology │Wuhan, China</b>
+                    </div>
+                </div>
+                <div id="NEEDS_content">
+                    {% include 'share/research_NEEDS_summary_%s.html'|format(lang) %}
+                </div>
+            </div>
+            <div id="AICPS">
+                <div class="row" id="AICPS_title">
+                    <time>07/2021 - 09/2021</time>
+                    <div>
+                        <b>Driving Fatigue Detection Using Electroencephalogram and Support Vector Machine</b>
+                        <a href="/graduate/research/UCInspire" class="a_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                      d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                <path fill-rule="evenodd"
+                                      d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                            </svg>
+                        </a><br>
+                        <a href="https://aicps.eng.uci.edu/" class="a_blank">Autonomous and Intelligent Cyber-Physical Systems(AICPS) Lab</a>,<br>
+                        led by Prof. Mohammad Abdullah Al Faruque<br>
+                        <b>Research Student │The UCInspire Summer Research Program │Virtual</b>
+                    </div>
+                </div>
+                <div id="AICPS_content">
+                    {% include 'share/research_UCInspire_summary_%s.html'|format(lang) %}
+                </div>
+            </div>
+            <div id="SNC">
+                <div class="row" id="SNC_title">
+                    <time>05/2020 - 06/2020</time>
+                    <div>
+                        <b>Deployment and Optimization of Wireless Sensor Network Nodes in Smart Homes</b><br>
+                        <a href="http://sjic.hust.edu.cn/smc/SNCRG/home.html" class="a_blank">Social Network Communication Lab</a>,
+                        led by Prof. Han Xu<br>
+                        <b>Research Assistant │Huazhong Univ. of Science and Technology │Wuhan, China</b>
+                    </div>
+                </div>
+                <div id="SNC_content">
+                    <ul>
+                        <li>
+                            Got familiar with common principles and algorithms of machine learning and wireless sensor
+                            network.
+                        </li>
+                        <li>
+                            Clustered the nodes using the K-Means algorithm.
+                        </li>
+                        <li>
+                            Simulated node deployment in the long belt scenario.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="web_development_experience">
+            <h2>WEB DEVELOPMENT EXPERIENCE</h2>
+            <ul>
+                <li>
+                    Used Bootstrap & jQuery as the front-end framework and Flask (Python) as the back-end framework,
+                    and MySQL as the database to develop different web pages, and then hosted the website on a Linux
+                    cloud server with Nginx and Gunicorn.
+                </li>
+                <li>
+                    Learned basics about computer network and developed a web app to offer VPN
+                    service based on V2ray to users who need access to Google, YouTube and other blocked websites for academic use. Currently,
+                    there are about 20 paid users to cover the cost of servers.
+                </li>
+                <li>
+                    Established a bookkeeping website to record everyday expenses, which is also adopted by father’s studio.
+                </li>
+                <li>
+                    Published a personal webpage for graduate program applications:
+                    <a href="https://sorapage.com/graduate/" target="_blank">https://sorapage.com/graduate/</a>
+                </li>
+                <li>
+                    Record the web development in GitHub:
+                    <a href="https://github.com/Sora-Sou/SoraPage/commits/master"
+                       class="a_blank">https://github.com/Sora-Sou/SoraPage/commits/master</a>.
+                </li>
+            </ul>
+        </section>
+        <section id="leadership">
+            <h2>LEADERSHIP(GROUP WORK PROJECTS)</h2>
+            <div class="row">
+                <time>10/2020 - 12/2020</time>
+                <div>
+                    <b>Achieved a real-time toxic gas monitor system</b> in Embedded System
+                </div>
+            </div>
+            <div class="row">
+                <time>10/2020 - 12/2020</time>
+                <div>
+                    <b>Created a music player on FPGA in Verilog</b> in Digital IC Design.
+                </div>
+            </div>
+            <div class="row">
+                <time>11/2019 - 01/2020</time>
+                <div>
+                    <b>Used MATLAB to synthesize digital music</b> in Signal and Linear System.
+                </div>
+            </div>
+            <div class="row">
+                <time>05/2019 - 06/2019</time>
+                <div>
+                    <b>Designed an intelligent car with infrared control and a grayscale sensor</b> in Arduino.
+                </div>
+            </div>
+            <div class="row">
+                <time>10/2018 - 01/2019</time>
+                <div>
+                    <b>Wrote a Gluttonous Snake game in C</b> in Course Project for Software design.
+                </div>
+            </div>
+        </section>
+        <section id="extracurricuum_activities">
+            <h2>EXTRACURRICULUM ACTIVITIES</h2>
+            <div class="row">
+                <time>09/2018 - 09/2019</time>
+                <div class=col-8><b>Staff Member</b> of the Department of Student Rights, HUST Student Union,
+                    feedbacking the students’ complaints and suggestions to HUST and involved in a university project
+                    dealing with stray cats and dogs on campus.
+                </div>
+            </div>
+            <div class="row">
+                <time>09/2018 - 09/2019</time>
+                <div class=col-8><b>Staff Member</b> of the Multimedia Department of HUST News Centre, responsible for
+                    making videos posted on the WeChat public account and promotional videos of events like New Year
+                    evening party and sports events.
+                </div>
+            </div>
+        </section>
+        <section id="skills">
+            <h2>SKILLS</h2>
+            <div class="row">
+                <div>Programming</div>
+                <div>Proficient: Python, C, MATLAB, Verilog, JavaScript, HTML, CSS<br>
+                    Intermediate: C++, Bash, SQL, Assembly, SPICE, LaTeX<br>
+                    Beginner: Java, PHP
+                </div>
+            </div>
+            <div class="row">
+                <div>Web Development</div>
+                <div>Proficient: Git, Flask, Bootstrap, jQuery, MySQL, SQLite, Cloud Server<br>
+                    Intermediate: Nginx, Node.JS, Electron<br>
+                    Beginner: Web Crawling and Data Mining, Computer Networks
+                </div>
+            </div>
+            <div class="row">
+                <div>Information Technology</div>
+                <div>Proficient: Traditional Machine Learning, Scikit-Learn<br>
+                    Intermediate: Neural Network, Deep Learning, PyTorch
+                </div>
+            </div>
+            <div class="row">
+                <div>Hardware</div>
+                <div>Proficient: FPGA, Embedded Systems, PCB Design, LTSpice<br>
+                    Intermediate: CMOS, RF
+                </div>
+            </div>
+            <div class="row">
+                <div>Languages</div>
+                <div>Native: Chinese<br>
+                    Fluent: English<br>
+                    Conversational: Japanese
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>RESEARCH INTERESTS</h2>
+            <div>Machine Learning, Data Science, Software Engineering, Hardware-Software Codesign</div>
+        </section>
+    </div>
+</body>
+
+</html>
