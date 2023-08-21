@@ -3,3 +3,6 @@
 venv
 static/*
 !static/dependency
+log
+
+__pycache__
