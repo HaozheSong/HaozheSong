@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .inline-svg {
+        display: inline;
+        fill: currentColor;
+        vertical-align: -0.125em;
+        margin-right: 0.5em;
+        height: 1em;
+        width: 1em;
+    }
+}
