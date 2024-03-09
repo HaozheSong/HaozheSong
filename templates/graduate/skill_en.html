@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduate-Skill</title>
+    {% include 'dependency.html' %}
+    <style>
+        .skill {
+            font-size: 1rem;
+        }
+
+        .pro_icon {
+            margin-left: 0.25rem;
+            vertical-align: -0.125rem;
+            height: 1.5rem;
+            width: 1.5rem;
+            fill: #6c757d;
+        }
+
+    </style>
+    <script>
+        $(function () {
+            $('.skill').each(function () {
+                const text = $(this).text();
+                const text_div = $(`<div>${text}</div>`);
+
+                const proficiency = parseFloat($(this).attr('data-pro'));
+                const full_battery = `<svg class="pro_icon" xmlns="http://www.w3.org/2000/svg"   class="bi bi-battery-full" viewBox="0 0 16 16">
+  <path d="M2 6h10v4H2V6z"/>
+  <path d="M2 4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2zm10 1a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h10zm4 3a1.5 1.5 0 0 1-1.5 1.5v-3A1.5 1.5 0 0 1 16 8z"/>
+</svg>`;
+                const half_battery = `<svg class="pro_icon" xmlns="http://www.w3.org/2000/svg"  class="bi bi-battery-half" viewBox="0 0 16 16">
+  <path d="M2 6h5v4H2V6z"/>
+  <path d="M2 4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2zm10 1a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h10zm4 3a1.5 1.5 0 0 1-1.5 1.5v-3A1.5 1.5 0 0 1 16 8z"/>
+</svg>`;
+                const empty_battery = `<svg class="pro_icon" xmlns="http://www.w3.org/2000/svg" class="bi bi-battery" viewBox="0 0 16 16">
+  <path d="M0 6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6zm2-1a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H2zm14 3a1.5 1.5 0 0 1-1.5 1.5v-3A1.5 1.5 0 0 1 16 8z"/>
+</svg>`;
+                let pro_div = $('<div></div>');
+                for (let i = 0; i < Math.floor(proficiency); i++) {
+                    $(pro_div).append(full_battery);
+                }
+                if (proficiency * 2 % 2 == 1) {
+                    $(pro_div).append(half_battery);
+                }
+                for (let i = 0; i < Math.floor(5 - proficiency); i++) {
+                    $(pro_div).append(empty_battery);
+                }
+
+                $(this).addClass('col-11 col-md-5 d-flex justify-content-between alert alert-primary mx-3').empty().append(text_div, pro_div);
+            })
+        })
+    </script>
+</head>
+<body>
+    {% include 'share/header.html' %}
+    <div class="container" style="max-width: 960px;">
+        <section>
+            <h1>Language</h1>
+            <h5>High-Level Language</h5>
+            <div class="row">
+                <div class="skill" data-pro="5">Python</div>
+                <div class="skill" data-pro="2.5">Java</div>
+                <div class="skill" data-pro="3">PHP</div>
+            </div>
+            <h5>Web Development Language</h5>
+            <div class="row">
+                <div class="skill" data-pro="5">JavaScript</div>
+                <div class="skill" data-pro="5">HTML</div>
+                <div class="skill" data-pro="4">CSS</div>
+            </div>
+            <h5>Functional Language</h5>
+            <div class="row">
+                <div class="skill" data-pro="4">SQL</div>
+                <div class="skill" data-pro="3">Bash</div>
+                <div class="skill" data-pro="3">LaTeX</div>
+                <div class="skill" data-pro="3.5">MATLAB</div>
+            </div>
+            <h5>Low-Level Language</h5>
+            <div class="row">
+                <div class="skill" data-pro="4.5">C</div>
+                <div class="skill" data-pro="4">C++</div>
+                <div class="skill" data-pro="3.5">Assembly</div>
+            </div>
+            <h5>Hardware Language</h5>
+            <div class="row">
+                <div class="skill" data-pro="4.5">Verilog</div>
+                <div class="skill" data-pro="3.5">SPICE</div>
+            </div>
+            <h5>Spoken Language</h5>
+            <div class="row">
+                <div class="skill" data-pro="5">Chinese</div>
+                <div class="skill" data-pro="4.5">English</div>
+                <div class="skill" data-pro="4">Japanese</div>
+            </div>
+        </section>
+        <hr>
+        <section>
+            <h1>Web Development</h1>
+            <h5>Web Framework</h5>
+            <div class="row">
+                <div class="skill" data-pro="4.5">Flask</div>
+                <div class="skill" data-pro="4.5">Bootstrap</div>
+                <div class="skill" data-pro="4">jQuery</div>
+                <div class="skill" data-pro="3.5">NodeJS</div>
+                <div class="skill" data-pro="3">Electron</div>
+            </div>
+            <h5>Database</h5>
+            <div class="row">
+                <div class="skill" data-pro="4">MySQL</div>
+                <div class="skill" data-pro="4">SQLite</div>
+            </div>
+            <h5>Web Server</h5>
+            <div class="row">
+                <div class="skill" data-pro="4">Nginx</div>
+                <div class="skill" data-pro="3">Apache</div>
+                <div class="skill" data-pro="3">Gunicorn</div>
+                <div class="skill" data-pro="4">Cloud Server</div>
+            </div>
+            <h5>Others</h5>
+            <div class="row">
+                <div class="skill" data-pro="4.5">Git</div>
+                <div class="skill" data-pro="3">Crawler</div>
+            </div>
+        </section>
+        <hr>
+        <section>
+            <h1>Machine Learning</h1>
+            <h5>Theory</h5>
+            <div class="row">
+                <div class="skill" data-pro="4.5">Traditional ML</div>
+                <div class="skill" data-pro="4">Deep Learning</div>
+            </div>
+            <h5>ML Framework</h5>
+            <div class="row">
+                <div class="skill" data-pro="4.5">Scikit-learn</div>
+                <div class="skill" data-pro="3.5">PyTorch</div>
+            </div>
+            <h5>Math Background</h5>
+            <div class="row">
+                <div class="skill" data-pro="4.5">Calculus</div>
+                <div class="skill" data-pro="4.5">Linear Algebra</div>
+                <div class="skill" data-pro="4">Probability</div>
+                <div class="skill" data-pro="4.5">Signal and Linear System</div>
+            </div>
+        </section>
+        <hr>
+        <section>
+            <h1>Hardware Design</h1>
+            <h5>Circuit</h5>
+            <div class="row">
+                <div class="skill" data-pro="4.5">Digital</div>
+                <div class="skill" data-pro="4">Analog</div>
+                <div class="skill" data-pro="4">CMOS</div>
+                <div class="skill" data-pro="4">RF</div>
+                <div class="skill" data-pro="3">MEMS</div>
+            </div>
+            <h5>Device</h5>
+            <div class="row">
+                <div class="skill" data-pro="4.5">Embedded</div>
+                <div class="skill" data-pro="4">FPGA</div>
+                <div class="skill" data-pro="4">Arduino</div>
+                <div class="skill" data-pro="4.5">Computer Architecture</div>
+            </div>
+            <h5>Tool</h5>
+            <div class="row">
+                <div class="skill" data-pro="4">Altera Quartus</div>
+                <div class="skill" data-pro="3.5">Xilinx Vivado</div>
+                <div class="skill" data-pro="4.5">Altium</div>
+                <div class="skill" data-pro="4">LTSpice</div>
+            </div>
+            <h5>Physics</h5>
+            <div class="row">
+                <div class="skill" data-pro="3">Quantum</div>
+                <div class="skill" data-pro="3">Thermodynamics</div>
+                <div class="skill" data-pro="3.5">Semiconductor</div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

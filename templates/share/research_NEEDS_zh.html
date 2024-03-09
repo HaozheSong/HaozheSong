@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research-NEEDS</title>
+    {% include 'dependency.html' %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='/dependency/research.css') }}">
+</head>
+
+<body>
+    {% include 'share/header.html' %}
+    <div class="container">
+        {% include 'share/no_zh_translation_modal.html' %}
+        <h2 class="text-center">Circuit Design based on a Spin–orbit Torque Device for Sensing 3D Magnetic Fields</h2>
+        <p>As a member of Nanoscale Energy-Efficient Devices and Systems (NEEDS) Lab, I undertake the task to design customized circuitry for the
+            lab's latest invention, <a href="https://www.nature.com/articles/s41928-021-00542-8" target="_blank">a spin–orbit torque device for
+                sensing 3D magnetic fields</a> which was published on Nature Electronics in March 2021.</p>
+        <p>The Hall-Bar like device will respond to a current stimulate with a microvolt-level output. And the output is determined by both the
+            current stimulate and the magnetic field. Therefore, a signal amplification circuit and a precise current source are required for the
+            sensor.</p>
+        <section>
+            <h4>Two-Stage Amplification</h4>
+            <div class="row">
+                <div class="col-12 col_img"><img src="{{ url_for('static',filename='/research/NEEDS/TA_1.png') }}"></div>
+                <div class="col-12 col_img mt-2"><img src="{{ url_for('static',filename='/research/NEEDS/TA_2.png') }}"></div>
+            </div>
+            <p>To read the output of the sensor to the CPU by an ADC, a two-stage amplification circuit is designed to amplify and bias the output
+                magnify and bias the ±0.2mV output to a range of 1.5V~3.5V to meet the ADC input requirements.</p>
+            <div class="row">
+                <div class="col-6 col_img"><img src="{{ url_for('static',filename='/research/NEEDS/TA_3.jpg') }}"></div>
+                <div class="col-6 col_img"><img src="{{ url_for('static',filename='/research/NEEDS/TA_4.jpg') }}"></div>
+            </div>
+            <p>The first stage reads the output from 2 pins of the sensor and magnify the output 90 times. In the power-on test shown in the
+                pictures above, a 10mV signal was magnified to 0.9V.</p>
+            <div class="row">
+                <div class="col-6 col_img"><img src="{{ url_for('static',filename='/research/NEEDS/TA_5.jpg') }}"></div>
+                <div class="col-6 col_img"><img src="{{ url_for('static',filename='/research/NEEDS/TA_6.jpg') }}"></div>
+            </div>
+            <p>The second stage makes a following 50x magnification and adds a 2.5V bias to the product, and results in an output of about 2.85V
+                from an input of 5mV.</p>
+        </section>
+        <section>
+            <h4>High-Precision Bipolar Digital Current Source </h4>
+            <div class="row">
+                <div class="col-12 col_img"><img src="{{ url_for('static',filename='/research/NEEDS/CS_1.png') }}"></div>
+                <div class="col-12 col_img mt-2"><img src="{{ url_for('static',filename='/research/NEEDS/CS_2.png') }}"></div>
+            </div>
+            <p>To provide a precise bipolar current, first an DAC and an amplifier constitute the voltage source with a low cost but excellent
+                performance. Then a Howland Current Pump is introduced to covert the voltage to current linearly.</p>
+        </section>
+        <section>
+            <h4>Products</h4>
+            <div class="row">
+                <div class="col-12 col_img"><img src="{{ url_for('static',filename='/research/NEEDS/product_1.jpg') }}"></div>
+            </div>
+            <p>The prototype failed because of a design defection which caused the OP1 to be burned out.</p>
+            <div class="row">
+                <div class="col-12 col_img"><img src="{{ url_for('static',filename='/research/NEEDS/product_2.jpg') }}"></div>
+            </div>
+            <p>To verify the feasibility of all parts in the system, the whole circuity was divided to be tested individually. </p>
+            <div class="row">
+                <div class="col-12 col_img"><img src="{{ url_for('static',filename='/research/NEEDS/product_3.jpg') }}"></div>
+            </div>
+            <p>The third generation succeeded but occasionally suffers from an imprecise amplification result. Currently, I am making an
+                effort to fix it.</p>
+        </section>
+    </div>
+</body>
+
+</html>

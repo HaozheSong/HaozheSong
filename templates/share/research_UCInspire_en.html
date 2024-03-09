@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research-UCInspire</title>
+    {% include 'dependency.html' %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='/dependency/research.css') }}">
+</head>
+<body>
+    {% include '/share/header.html' %}
+    <div class="container">
+        <h2 class="text-center">Driving Fatigue Detection Using Electroencephalogram and Support Vector Machine</h2>
+        <p>Nowadays, self-driving cars are becoming more and more popular in our daily life. One of the functions desired for these cars is to
+            detect driver's fatigue because they are more likely to drowse while the car is in the self-driving mode. To achieve such a function,
+            one practical method is to use machine learning algorithm to analyze the electroencephalogram signal and predict the driving fatigue in
+            advance to prevent accident.
+        </p>
+        <section>
+            <h4>Electroencephalogram</h4>
+            <p>Electroencephalogram, usually abbreviated as EEG, can be used in detecting fatigue while driving because fatigue is highly related
+                with the brain. </p>
+            <div class="row">
+                <div class="col-4 col_img"><img src="{{ url_for('static',filename='/research/UCInspire/EEG_1.jpg') }}"></div>
+                <div class="col-8 col_img"><img src="{{ url_for('static',filename='/research/UCInspire/EEG_2.svg') }}"></div>
+            </div>
+            <p>As shown in the left picture, EEG raw signals can be sampled from scalp electrodes. The location of the electrodes can be
+                described in the right picture and each electrode is usually called a channel. According to biological research, F, O and P
+                channels are most related to fatigue so EEG signals from these channels are paid more attention in the project.</p>
+            <div class="row">
+                <div class="col-6 col_img"><img src="{{ url_for('static',filename='/research/UCInspire/EEG_3.png') }}"></div>
+                <div class="col-6 col_img"><img src="{{ url_for('static',filename='/research/UCInspire/EEG_4.png') }}"></div>
+            </div>
+            <p>Through EEGLAB, a MATLAB toolbox specialized in processing EEG signals, we can plot the EEG waves in the time domain and use
+                Fourier Transform to extract Power Spectrum Density(PSD) from a period of the raw signals.</p>
+            <p>Research links the fatigue with lower frequencies. The larger amplitude of low frequencies is shown in the PSD figures, the
+                more likely is the driver to be tired. Therefore, by analyzing the amplitude of the frequencies, we can make a prediction of
+                the driver's sleepiness.</p>
+        </section>
+        <section>
+            <h4>Support Vector Machine</h4>
+            <p>With PSD as the input features, labels for these PSDs are required to train the SVM. There are many labeling method to evaluate whether
+                the driver is fatigued or not, such as PERCLOS and response time.</p>
+            <p>I chose response time to label the data. Response time is defined as the time interval between a deviation of the car and the
+                moment the driver starts to response to the deviation. In general, a large amount of the response time often indicates the
+                driver's fatigue because it takes more time for a tired driver to response. So by comparing the driver's response time with a
+                preset threshold, labels for the corresponding feature are obtained.</p>
+            <div class="row">
+                <div class="col-12 col_img"><img src="{{ url_for('static',filename='/research/UCInspire/SVM_1.png') }}"></div>
+            </div>
+            <p>For example, there are 2 trial events in the figure above. First, a random deviation starts at the moment of the orange line 251.
+                Then the subject of the trial takes some time to respond at the moment of magenta line 253. The interval between 251(or 252) and
+                253 is defined as response time which is within the research interest.</p>
+            <div class="row">
+                <div class="col-4 col_img"><img src="{{ url_for('static',filename='/research/UCInspire/SVM_2.png') }}"></div>
+                <div class="col-8 col_img"><img src="{{ url_for('static',filename='/research/UCInspire/SVM_3.png') }}"></div>
+            </div>
+            <p>After training the SVM with the features and labels mentioned above and by optimization, the model achieved a prediction accuracy
+                of 77.8% but more effort is required to improve the Precision rate.</p>
+        </section>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简历</title>
+    {% include 'dependency.html' %}
+    <style>
+        ul {
+            padding-inline-start: 24px;
+        }
+
+        .container {
+            max-width: 960px;
+            line-height: 1.75;
+        }
+
+        .bi {
+            vertical-align: -0.125em;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('h2').each(function () {
+                $(this).addClass('mt-4');
+                $(this).after('<hr class="my-1">')
+            });
+
+            $('.row').each(function () {
+                $($(this).children()[0]).addClass('col-4 col-lg-3');
+                $($(this).children()[1]).addClass('col-8 col-lg-9');
+            });
+
+            $('.a_blank').each(function () {
+                $(this).attr('target', '_blank');
+            });
+
+            $('#skills').children('div').each(function () {
+                $(this).addClass('mt-2');
+                $(this).children().first().addClass('font-weight-bold');
+            });
+        })
+    </script>
+</head>
+
+<body>
+    {% include 'share/header.html' %}
+    <div class="container mb-5">
+        <h1 class="text-center">宋昊浙</h1>
+        <section id="contact_info">
+            <div class="d-flex flex-column flex-md-row align-items-center justify-content-md-center">
+                <span id="phone">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill"
+                         viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678
+                         0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                    </svg>
+                    +86 18062063809
+                </span>
+                <span id="email" class="mx-md-4">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                       <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                   </svg>
+                    haozhesong.it@gmail.com
+                </span>
+                <span id="website">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right-square-fill"
+                         viewBox="0 0 16 16">
+                        <path d="M14 0a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12zM5.904 10.803 10 6.707v2.768a.5.5 0 0 0 1 0V5.5a.5.5 0 0 0-.5-.5H6.525a.5.5 0 1 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 .707.707z"/>
+                    </svg>
+                    <a href="https://sorapage.com/job/CV?lang=zh" class="a_blank text-reset">https://sorapage.com/job/CV?lang=zh</a>
+                </span>
+            </div>
+
+        </section>
+        <section id="education">
+            <h2>教育经历</h2>
+            <div class="row">
+                <time>09/2018 - 06/2022</time>
+                <div>
+                    <b>华中科技大学</b> 工学学士<br>
+                    <span>Integrated Circuits and Systems 集成电路设计与集成系统</span><br>
+                    <span>GPA: 3.86/4.00</span>
+                </div>
+            </div>
+            <div class="row">
+                <time>07/2021 - 09/2021</time>
+                <div>
+                    <b>University of California, Irvine 加利福尼亚大学尔湾分校</b> 暑期科研项目<br>
+                    <span>The UCInspire Summer Research Program in Engineering</span><br>
+                    <span>GPA: 4.00/4.00</span>
+                </div>
+            </div>
+            <div class="row">
+                <time>01/2023 - 01/2025 (Offer)</time>
+                <div>
+                    <b>Carnegie Mellon University 卡耐基梅隆大学</b> 理学硕士<br>
+                    <span>Electrical and Computer Engineering, Software Engineering Concentration</span><br>
+                    <span>电子与计算机工程 软件开发专业</span>
+                </div>
+            </div>
+        </section>
+        <section id="skills">
+            <h2>专业技能</h2>
+            <div class="row">
+                <div>编程语言</div>
+                <div><b>熟练</b>: Python, C, MATLAB, Verilog, JavaScript, HTML, CSS<br>
+                    <b>中等</b>: C++, Bash, SQL, Assembly, SPICE, LaTeX<br>
+                    <b>基础</b>: Java, PHP
+                </div>
+            </div>
+            <div class="row">
+                <div>网页开发</div>
+                <div><b>熟练</b>: Git, Flask, Bootstrap, jQuery, MySQL, SQLite<br>
+                    <b>中等</b>: Nginx, Node.JS, Electron, 云服务器<br>
+                    <b>基础</b>: 网络爬虫与数据挖掘，计算机网络
+                </div>
+            </div>
+            <div class="row">
+                <div>机器学习</div>
+                <div><b>熟练</b>: 传统机器学习算法, Scikit-Learn<br>
+                    <b>中等</b>: 神经网络, 深度学习, PyTorch
+                </div>
+            </div>
+            <div class="row">
+                <div>硬件电路</div>
+                <div><b>熟练</b>: FPGA, 嵌入式系统, PCB设计, LTSpice<br>
+                    <b>中等</b>: CMOS, RF
+                </div>
+            </div>
+            <div class="row">
+                <div>自然语言</div>
+                <div><b>母语</b>: 中文<br>
+                    <b>熟练</b>: 英语<br>
+                    <b>中等</b>: 日语
+                </div>
+            </div>
+        </section>
+        <section id="web_development_experience">
+            <h2>网页开发经历</h2>
+            <ul>
+                <li>使用前端框架Bootstrap & jQuery，后端框架Flask，数据库MySQL，服务器Nginx和Gunicorn进行全栈网页开发</li>
+                <li>已完成用户系统、评论系统、交易系统、邮件系统四个子系统开发工作</li>
+                <li>结合4个子系统和网络协议知识开发了记账本、网络流量转发等网页APP，并正在使用Electron编写桌面APP</li>
+                <li>网页开发全过程与源代码记录于GitHub
+                    <a href="https://github.com/Sora-Sou/SoraPage/commits/master"
+                       class="a_blank">https://github.com/Sora-Sou/SoraPage/commits/master</a>.
+                </li>
+            </ul>
+        </section>
+        <section id="research_experience">
+            <h2>科研经历</h2>
+            <div id="NEEDS">
+                <div class="row" id="NEEDS_title">
+                    <time>07/2020 - 至今</time>
+                    <div>
+                        <b>三维磁场传感器驱动电路实现</b>
+                        <a href="/job/research/NEEDS?lang=zh" class="a_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                      d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                <path fill-rule="evenodd"
+                                      d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                            </svg>
+                        </a><br>
+                        <a href="http://needs.oei.hust.edu.cn/" class="a_blank">自旋电子器件及系统实验室</a> | 华中科技大学 | 游龙教授
+                    </div>
+                </div>
+                <div id="NEEDS_content">
+                    {% include 'share/research_NEEDS_summary_zh.html' %}
+                </div>
+            </div>
+            <div id="AICPS">
+                <div class="row" id="AICPS_title">
+                    <time>07/2021 - 09/2021</time>
+                    <div>
+                        <b>基于脑电图和支持向量机的疲劳驾驶检测</b>
+                        <a href="/job/research/UCInspire?lang=zh" class="a_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                      d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                <path fill-rule="evenodd"
+                                      d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                            </svg>
+                        </a><br>
+                        <a href="https://aicps.eng.uci.edu/" class="a_blank">Autonomous and Intelligent Cyber-Physical Systems(AICPS) Lab</a><br>
+                        University of California, Irvine |
+                        Prof.Mohammad Abdullah Al Faruque
+                    </div>
+                </div>
+                <div id="AICPS_content">
+                    {% include 'share/research_UCInspire_summary_zh.html' %}
+                </div>
+            </div>
+            <div id="SNC">
+                <div class="row" id="SNC_title">
+                    <time>05/2020 - 06/2020</time>
+                    <div>
+                        <b>智能家居中无线传感器网络节点放置与优化</b><br>
+                        <a href="http://sjic.hust.edu.cn/smc/SNCRG/home.html" class="a_blank">社会网络舆论实验室</a> | 华中科技大学 | 徐涵副教授<br>
+                    </div>
+                </div>
+                <div id="SNC_content">
+                    <ul>
+                        <li>学习掌握了机器学习和无线传感器网络常见定理和算法</li>
+                        <li>使用K-Means算法优化节点分布</li>
+                        <li>模拟仿真在长带场景下的无线传感器节点分布</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="leadership">
+            <h2>项目经历</h2>
+            <div class="row">
+                <time>10/2020 - 12/2020</time>
+                <div>
+                    <b>基于ARC处理器的CO监测仪</b> 嵌入式系统课程设计
+                </div>
+            </div>
+            <div class="row">
+                <time>10/2020 - 12/2020</time>
+                <div>
+                    <b>FPGA数字音乐合成器</b> 数字集成电路课程设计
+                </div>
+            </div>
+            <div class="row">
+                <time>11/2019 - 01/2020</time>
+                <div>
+                    <b>MATLAB数字音乐合成器</b> 信号与系统工程设计
+                </div>
+            </div>
+            <div class="row">
+                <time>05/2019 - 06/2019</time>
+                <div>
+                    <b>Arduino红外遥控与灰度传感寻迹智能小车</b> 专业认知实验
+                </div>
+            </div>
+            <div class="row">
+                <time>10/2018 - 01/2019</time>
+                <div>
+                    <b>C语言贪吃蛇游戏</b> 软件课程设计
+                </div>
+            </div>
+        </section>
+        <section id="extracurricuum_activities">
+            <h2>学生组织经历</h2>
+            <div class="row">
+                <time>09/2018 - 09/2019</time>
+                <div class=col-8>华中科技大学学生会权益部成员，负责反馈同学们对学校的投诉和建议，如学校施工噪音，食堂卫生等学生权益问题，参与了处理校园流浪猫狗的学生会项目</div>
+            </div>
+            <div class="row">
+                <time>09/2018 - 09/2019</time>
+                <div class=col-8>华中科技大学光学与电子信息学院新闻宣传中心多媒体部成员，负责制作剪辑学院光小电的卖萌世界微信公众号视频，也参与制作过学校新年晚会和运动会等大型活动的宣传动员视频</div>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>
