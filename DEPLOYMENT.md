@@ -1,3 +1,10 @@
+# Docker
+```bash
+docker build -t haozhesong-v2 .
+docker run -d  -p 5000:5000 --name haozhesong-v2 haozhesong-v2 
+```
+
+# Systemd
 Upload static media files
 
 Create virtual environment and install dependencies
