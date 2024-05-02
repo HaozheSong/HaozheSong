@@ -1,23 +1,21 @@
-# Docker
+# Flask in Gunicorn
+## Docker
 ```bash
-docker build -t haozhesong-v2 .
-docker run -d  -p 5000:5000 --name haozhesong-v2 haozhesong-v2 
+docker build -t haozhesong-v3 .
+docker run -d  -p 5000:5000 --name haozhesong-v3 haozhesong-v3
 ```
 
-# Systemd
+## Systemd
 Upload static media files
 
 Create virtual environment and install dependencies
-
 ```bash
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
-Change `WorkingDirectory` and `ExecStart` path in `gunicorn.service` file
 
-Copy to systemd directory and start it
-
+Change `WorkingDirectory` and `ExecStart` path in `gunicorn.service` file. Copy to systemd directory and start it.
 ```bash
 sudo cp gunicorn.service /etc/systemd/system/gunicorn.service
 sudo systemctl start gunicorn
@@ -25,9 +23,9 @@ sudo systemctl enable gunicorn
 
 sudo systemctl status gunicorn
 ```
-Change `access_log` and `error_log` path in `gunicorn_nginx.conf` file
 
-Copy to NGINX directory and reload nginx
+# NGINX
+Change `access_log` and `error_log` path in `gunicorn_nginx.conf` file. Copy to NGINX directory and reload nginx.
 ```bash
 # install nginx
 sudo apt update
@@ -37,6 +35,8 @@ sudo cp gunicorn_nginx.conf /etc/nginx/conf.d/gunicorn_nginx.conf
 sudo nginx -s reload
 ```
 
+# HTTPS
+## Certbot
 Install certbot
 ```bash
 # install snap

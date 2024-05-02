@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    {% include 'components/dependency.html' %}
+    <style>
+        .project_img {
+            width: 128px;
+        }
+    </style>
+</head>
+
+<body>
+    {% include 'components/header.html' %}
+    <main class="container">
+        <h1 class="text-center">Project</h1>
+
+        <section class="card mt-3 mb-4 shadow">
+            <div class="row">
+                <div class="col-12 col-md-auto ml-md-4 d-flex align-items-center justify-content-center">
+                    <img src="{{ url_for('static', filename='project/interface.png') }}" class="project_img">
+                </div>
+                <div class="col-12 col-md">
+                    <div class="card-body">
+                        <h5 class="card-title">NetShare Web Interface for a Machine Learning IP Header Trace Generator
+                        </h5>
+                        <div class="card-text">
+                            <p>Built a REST web interface with React (Next.js), Tailwind CSS, Django, and SQLite to
+                                provide accessible and user-friendly interaction with the machine learning based header
+                                trace generator.</p>
+                            <p>Implemented JWT for user authorization. Dockerized the web application for fast
+                                deployment.</p>
+                            <p>Upgraded the machine learning backend to communicate with web interface via gRPC and run
+                                multiple training tasks simultaneously using Python multiprocessing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card mt-3 mb-4 shadow">
+            <div class="row">
+                <div class="col-12 col-md-auto ml-md-4 d-flex align-items-center justify-content-center">
+                    <img src="{{ url_for('static', filename='project/budget.png') }}" class="project_img">
+                </div>
+                <div class="col-12 col-md">
+                    <div class="card-body">
+                        <h5 class="card-title">Budget Desktop Application Development</h5>
+                        <div class="card-text">
+                            <p>
+                                Utilized Electron to develop a desktop application for expense and income tracking,
+                                achieved by React in TypeScript for the frontend, and Spring Boot with Maven for the
+                                backend.
+                            </p>
+                            <p>
+                                Created an extensible backend framework that supported data plugins to store data in CSV
+                                files, MySQL, and MongoDB databases, and provided REST APIs for frontend display
+                                plugins to visualize data in various charts by EChartJS.
+                            </p>
+                            <p>
+                                Conducted unit tests and test doubles with Jest, JUnit and Mockito framework, and
+                                automated testing with GitHub continuous integration.
+                            </p>
+                            <p>
+                                Incorporated Proxy and Template design patterns along with inheritance and polymorphism
+                                into software construction.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card mt-3 mb-4 shadow">
+            <div class="row">
+                <div class="col-12 col-md-auto ml-md-4 d-flex align-items-center justify-content-center">
+                    <img src="{{ url_for('static', filename='project/database.svg') }}" class="project_img">
+                </div>
+                <div class="col-12 col-md">
+                    <div class="card-body">
+                        <h5 class="card-title">Database</h5>
+                        <div class="card-text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card mt-3 mb-4 shadow">
+            <div class="row">
+                <div class="col-12 col-md-auto ml-md-4 d-flex align-items-center justify-content-center">
+                    <img src="{{ url_for('static', filename='project/distributed_file_system.png') }}"
+                         class="project_img">
+                </div>
+                <div class="col-12 col-md">
+                    <div class="card-body">
+                        <h5 class="card-title">AFS-style Distributed Caching File System</h5>
+                        <div class="card-text">
+                            <p>Engineered TCP-based RPC protocol adhering to idempotent at-most-once semantics.</p>
+                            <p>Developed a RPC stub generator in C to serialize and deserialize parameters.</p>
+                            <p>Built a distributed file system in AFS-1 style, featuring file freshness verification
+                                upon opening and a 'late close after write' strategy for optimal data consistency.</p>
+                            <p>Developed a Java multithread server that supports concurrent file updating and
+                                restoring old versions of files.</p>
+                            <p>Constructed a client-side proxy with pluggable LRU cache by interpositioning the
+                                standard file system call through a custom shared library.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card mt-3 mb-4 shadow">
+            <div class="row">
+                <div class="col-12 col-md-auto ml-md-4 d-flex align-items-center justify-content-center">
+                    <img src="{{ url_for('static', filename='project/cloud_file_system.png') }}" class="project_img">
+                </div>
+                <div class="col-12 col-md">
+                    <div class="card-body">
+                        <h5 class="card-title">CloudFS</h5>
+                        <div class="card-text">
+                            <p>
+                                Engineered a hybrid file system utilizing the FUSE (File system in USEr space)
+                                framework, seamlessly integrating local SSD and AWS S3 cloud storage. Optimized storage
+                                efficiency by allocating small files on the local SSD and large files on the cloud.
+                            </p>
+                            <p>
+                                Devised a sophisticated component for file segmentation and deduplication, leveraging
+                                the Rabin Fingerprinting algorithm, significantly reducing cloud storage usage.
+                            </p>
+                            <p>
+                                Implemented a snapshot feature for the entire file system, achieving minimal cloud
+                                storage consumption through the use of references to file segments.
+                            </p>
+                            <p>
+                                Enhanced performance and network efficiency by integrating an LRU cache of file segments
+                                on the local file system, minimizing network transfers.
+                            </p>
+                            <p>
+                                Guaranteed fail-resilience by implementing a write-ahead logging mechanism to capture
+                                system states, ensuring system integrity and recovery capabilities across file system
+                                remounts and reboots.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card mt-3 mb-4 shadow">
+            <div class="row">
+                <div class="col-12 col-md-auto ml-md-4 d-flex align-items-center justify-content-center">
+                    <img src="{{ url_for('static', filename='project/aws.svg') }}" class="project_img">
+                </div>
+                <div class="col-12 col-md">
+                    <div class="card-body">
+                        <h5 class="card-title">Advanced AWS Auto Scaling</h5>
+                        <div class="card-text">
+                            <p>
+                                Orchestrated the auto-scaling of a machine learning application on AWS, optimizing
+                                resource allocation to handle peak demand while minimizing costs, using Terraform for
+                                infrastructure management. Implemented three distinct scaling methods:</p>
+                            <p>
+                                <b>Auto Scaling Group with Load Balancer and CloudWatch Integration:</b> Configured
+                                an AWS Auto Scaling Group, supplemented by a Load Balancer, to dynamically scale based
+                                on CPU utilization metrics from Cloud Watch. Enhanced system resilience by fine-tuning
+                                health checks, ensuring robust handling of unexpected AWS EC2 instances crashes.
+                            </p>
+                            <p>
+                                <b>Lambda-Driven Scaling with AWS Step Functions:</b> Developed a Python-based Lambda
+                                function to define scaling logic for Auto Scaling Group, triggered periodically by a
+                                finite state machine in AWS Step Functions.
+                            </p>
+                            <p>
+                                <b>Lambda and Docker Container:</b> Dockerized the machine learning application and
+                                pushed to AWS ECR. Auto-scaled by the Lambda container invocation. Achieved the most
+                                cost-effective, responsive scaling that reacts to workload quickly and pays per use
+                                to reduces expenses significantly.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card mt-3 mb-4 shadow">
+            <div class="row">
+                <div class="col-12 col-md-auto ml-md-4 d-flex align-items-center justify-content-center">
+                    <img src="{{ url_for('static', filename='project/spark.svg') }}" class="project_img">
+                </div>
+                <div class="col-12 col-md">
+                    <div class="card-body">
+                        <h5 class="card-title">Scalable Distributed Machine Learning on AWS with Apache Spark</h5>
+                        <div class="card-text">
+                            <p>
+                                Orchestrated an Apache Spark cluster of 17 AWS c7g.xlarge spot instances to run a
+                                binary classification machine learning job using sparse logistic regression with an
+                                L2-regularized gradient descent algorithm.
+                            </p>
+                            <p>
+                                Extracted, transformed, and loaded (ETL) a corpus of the first 400 WET files (70 GB)
+                                from the
+                                <a href="https://commoncrawl.org/blog/december-2016-crawl-archive-now-available">
+                                    December 2016 Crawl Archive
+                                </a>, creating a refined dataset for training a Latent Dirichlet Allocation (LDA) model
+                                and computing corpus statistics in just 19 minutes.
+                            </p>
+                            <p>
+                                Trained the machine learning model with 882,774,562 features for 2 iterations in 33
+                                minutes, leveraging inverted-index and partition-based join to optimize performance and
+                                memory usage on the 8G memory c7g.xlarge instances.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card mt-3 mb-4 shadow">
+            <div class="row">
+                <div class="col-12 col-md-auto ml-md-4 d-flex align-items-center justify-content-center">
+                    <img src="{{ url_for('static', filename='project/ssd.png') }}" class="project_img">
+                </div>
+                <div class="col-12 col-md">
+                    <div class="card-body">
+                        <h5 class="card-title">Page-mapping Log-structured SSD Flash Translation Layer</h5>
+                        <div class="card-text">
+                            <p>
+                                Designed and implemented a flash translation layer to maps continuous logical address
+                                to physical pages in the SSDs.
+                            </p>
+                            <p>
+                                Leveraged log-structured mapping strategy in merely 214 KB memory to enhance SSD
+                                endurance and provide better write performance. Integrated with 4 garbage policies:
+                                FIFO, LRU, greedy, cost-benefit.
+                            </p>
+                            <p>
+                                Reduced write amplification and further enhanced SSD endurance by transitioning from
+                                block mapping to page mapping granularity and greedy garbage collection policy.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card mt-3 mb-4 shadow">
+            <div class="row">
+                <div class="col-12 col-md-auto ml-md-4 d-flex align-items-center justify-content-center">
+                    <img src="{{ url_for('static', filename='project/memory.png') }}" class="project_img">
+                </div>
+                <div class="col-12 col-md">
+                    <div class="card-body">
+                        <h5 class="card-title">High-performance Dynamic Memory Allocator</h5>
+                        <div class="card-text">
+                            <p>
+                                Developed custom implementations of malloc, calloc, realloc, and free. Achieved an
+                                exceptional average throughput of 10,804 Kops/sec and a high memory utilization rate of
+                                74.2%.
+                            </p>
+                            <p>
+                                Implemented Segregated Free Lists, employing doubly linked lists to efficiently
+                                categorize and manage free memory blocks based on their sizes, enhancing allocation
+                                speed and reducing fragmentation.
+                            </p>
+                            <p>
+                                Optimized memory utilization by 15% through the innovative use of 16-byte mini blocks
+                                and the elimination of footers in allocated memory blocks, contributing to more
+                                efficient space usage.
+                            </p>
+                            <p>
+                                Applied a Better Fit search algorithm for the segregated free lists, striking an
+                                effective balance between throughput and memory utilization.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card mt-3 mb-4 shadow">
+            <div class="row">
+                <div class="col-12 col-md-auto ml-md-4 d-flex align-items-center justify-content-center">
+                    <img src="{{ url_for('static', filename='project/shell.png') }}" class="project_img">
+                </div>
+                <div class="col-12 col-md">
+                    <div class="card-body">
+                        <h5 class="card-title">Multiprocessing Linux Shell</h5>
+                        <div class="card-text">
+                            <p>Developed a Linux shell program in C, capable of executing and controlling both
+                                foreground and background processes utilizing multiprocessing and execve system
+                                call.</p>
+                            <p>Integrated I/O Redirection functionality, enabling the shell to redirect input and output
+                                streams from and to files.</p>
+                            <p>Managed child processes and ensured robust error handling using Linux signal
+                                handlers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>
