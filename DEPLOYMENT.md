@@ -15,7 +15,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Change `WorkingDirectory` and `ExecStart` path in `gunicorn.service` file. Copy to systemd directory and start it.
+Rename `gunicorn_template.service` to `gunicorn.service`. Change `WorkingDirectory` and `ExecStart` path in `gunicorn.service` file. Copy to systemd directory and start it.
 ```bash
 sudo cp gunicorn.service /etc/systemd/system/gunicorn.service
 sudo systemctl start gunicorn

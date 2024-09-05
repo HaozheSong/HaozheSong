@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn Daemon
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ubuntu/HaozheSong
+ExecStart=/home/ubuntu/HaozheSong/venv/bin/gunicorn -c /home/ubuntu/HaozheSong/gunicorn.conf.py
+ExecReload=/bin/kill -s HUP $MAINPID
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
