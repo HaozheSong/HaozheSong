@@ -1,3 +1,7 @@
+# Development
+```bash
+flask --app app.py --debug run
+```
 # Flask in Gunicorn
 ## Docker
 ```bash

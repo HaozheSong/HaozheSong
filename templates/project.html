@@ -81,8 +81,23 @@
                 </div>
                 <div class="col-12 col-md">
                     <div class="card-body">
-                        <h5 class="card-title">Database</h5>
+                        <h5 class="card-title">Relational Database Management System Development</h5>
                         <div class="card-text">
+                            <p>
+                                Built a RDBMS in C++17 with CMake and GTest, leveraging modern C++ techniques including smart pointers, move semantics, RAII, and OOP.
+                            </p>
+                            <p>
+                                Developed a buffer pool manager to cache physical disk pages in memory using LRU-K replacement policy.
+                            </p>
+                            <p>
+                                Created database index using extendible hash table that dynamically grows and shrinks to ensure efficient data retrieval.
+                            </p>
+                            <p>
+                                Engineered a query execution engine based on Volcano processing model to optimize query plans and execute SQL queries.
+                            </p>
+                            <p>
+                                Implemented multi-version optimistic concurrency control (MVOCC) to achieve snapshot isolation for transaction management.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -102,7 +117,7 @@
                             <p>Engineered TCP-based RPC protocol adhering to idempotent at-most-once semantics.</p>
                             <p>Developed a RPC stub generator in C to serialize and deserialize parameters.</p>
                             <p>Built a distributed file system in AFS-1 style, featuring file freshness verification
-                                upon opening and a 'late close after write' strategy for optimal data consistency.</p>
+                                upon opening and a "late close after write wins" strategy for optimal data consistency.</p>
                             <p>Developed a Java multithread server that supports concurrent file updating and
                                 restoring old versions of files.</p>
                             <p>Constructed a client-side proxy with pluggable LRU cache by interpositioning the
@@ -120,7 +135,7 @@
                 </div>
                 <div class="col-12 col-md">
                     <div class="card-body">
-                        <h5 class="card-title">CloudFS</h5>
+                        <h5 class="card-title">CloudFS: Hybrid File System on Local SSD and AWS S3 Storage</h5>
                         <div class="card-text">
                             <p>
                                 Engineered a hybrid file system utilizing the FUSE (File system in USEr space)

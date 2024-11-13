@@ -1,32 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haozhe Song</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
     {% include 'components/dependency.html' %}
-</head>
+    <style>
+      #title p {
+        margin: 0;
+      }
+    </style>
+  </head>
 
-<body>
+  <body>
     {% include 'components/header.html' %}
     <main class="container" id="container">
-        <h1 class="text-center">Home</h1>
-        <p>Work In Progress</p>
-        <p>Redirect to <a href="/project">Project</a> page in <span id="countdown">5</span> seconds.</p>
-        <script>
-            let timeLeft = 5;
-            const timer = setInterval(function () {
-                timeLeft--;
-                $('#countdown').text(timeLeft);
+      <section id="title" class="text-center">
+        <h1>Haozhe Song</h1>
+        <p>
+          Master student @ Carnegie Mellon University & Graduating in December
+          2024
+        </p>
+        <p>Software Engineer | Full-stack Development | Data Engineering</p>
+      </section>
 
-                if (timeLeft <= 0) {
-                    clearInterval(timer);
-                    window.location.href = '/project';
-                }
-            }, 1000);
-        </script>
+      <section class="card mt-3 mb-4 shadow">
+        <div class="card-body">
+          <h4 class="card-title">About Me</h4>
+          <ul>
+            <li>
+              Master student in Electrical and Computer Engineering at Carnegie
+              Mellon University, focus on software engineering, graduating in
+              December 2024.
+            </li>
+            <li>
+              Bachelor degree in Integrated Circuits and System from Huazhong
+              University of Science and Technology, focus on computer hardware
+              and circuit design.
+            </li>
+            <li>
+              Familiar with both software and hardware, shift in focus and
+              interests from hardware to software, especially full-stack
+              development and data engineering.
+            </li>
+            <li>
+              Experience in machine learning, faith in AI era, active learner of
+              state-of-the-art AI technology.
+            </li>
+            <li>
+              Passionate about exploring new technologies, aim to be versatile
+              in the tech industry.
+            </li>
+          </ul>
+        </div>
+      </section>
     </main>
-</body>
-
+  </body>
 </html>
